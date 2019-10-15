@@ -1,0 +1,381 @@
+/* --------nav/menu------- */
+.nav {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 15px;
+}
+
+.dropbtn {
+    padding: 5px 0px;
+    margin: 3px 7px;
+}
+
+.dropbtn,
+#logOutbtn {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    font-size: 0.8rem;
+}
+
+.dropbtn::after {
+    content: "";
+    position: absolute;
+    top: 21px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgb(240, 240, 240);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 300ms ease-in;
+}
+
+.dropbtn:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    background: rgb(0, 133, 143);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profileMenu {
+    overflow-x: hidden;
+    display: none;
+    position: absolute;
+    right: -26px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #7448b4;
+    min-width: 70px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.profileMenu li {
+    overflow-x: hidden;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    margin: 25px 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.show {
+    display: block;
+}
+
+/* --------modals ------- */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 20px grey;
+}
+
+.modalContent {
+    background-color: #fefefe;
+    margin: 10% auto;
+    border: 1px solid #888;
+    width: 40%;
+    height: 65%;
+    overflow: auto;
+    opacity: 1;
+    border-radius: 7%;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.modalHeader {
+    font-size: 30px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.modalBody {
+    padding: 30px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/*close button*/
+.close {
+    position: absolute;
+    right: 485px;
+    top: 150px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/*close hover and focus effects*/
+.close:hover,
+.close:focus {
+    color: grey;
+    cursor: pointer;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* -----------about us ----------------- */
+#aboutus .modalBody {
+    position: relative;
+    text-align: center;
+}
+
+.returnbtn {
+    position: absolute;
+    bottom: -60px;
+    left: 20px;
+    width: 90%;
+    padding: 14px 50px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 2px solid lightgrey;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.returnbtn:hover {
+    background-color: lightgrey;
+}
+
+#aboutusimg {
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+/* ---------- sign up sign in ----------- */
+/* icons in input fields */
+
+.inputIcons {
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+.inputIcons i {
+    position: absolute;
+    top: 5px;
+    left: 1px;
+    padding: 10px;
+    min-width: 50px;
+    text-align: center;
+}
+
+/* password toggle */
+.pwtoggle {
+    position: absolute;
+    top: 4px;
+    right: 60px;
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.pwtoggle .activePW {
+    color: blue;
+}
+
+/* input fields */
+.inputIcons input[type=text],
+.inputIcons input[type=password] {
+    width: 100%;
+    padding: 17px 30px;
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.inputIcons input[type=text]:focus,
+.inputIcons input[type=password]:focus {
+    border: 2px solid #007ee5;
+}
+
+.inputIcons input:hover {
+    border: 2px solid darkgrey;
+}
+
+/* Social login  */
+
+.mediaSignup {
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-size: 40% 1px;
+    background-position: center left, center right;
+    background-repeat: no-repeat;
+}
+
+.msInnertext {
+    margin: 10px;
+    background-image: linear-gradient(lightgrey, lightgrey), linear-gradient(lightgrey, lightgrey);
+    background-size: 40% 1px;
+    background-position: center left, center right;
+    background-repeat: no-repeat;
+}
+
+#kakaoLoginButtonContainer {
+    border: 2px transparent;
+    cursor: pointer;
+}
+
+/*buttons*/
+.cancelbtn,
+.signupbtn {
+    float: left;
+    width: 47.5%;
+    padding: 14px 50px;
+    background-color: white;
+    border-radius: 6px;
+    border: 2px solid lightgrey;
+    margin: 5px 5px 10px 5px;
+    cursor: pointer;
+}
+
+.signupbtn {
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid #4CAF50;
+}
+
+.signupbtn:hover,
+.cancelbtn:hover {
+    background-color: lightgrey;
+    border: 2px solid lightgrey;
+    color: white;
+}
+
+/*msgs*/
+#terms {
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.signinOptions {
+    display: flex;
+    margin: 20px 0px;
+}
+
+.signinOptions input {
+    margin: 0px 10px 0px 0px;
+}
+
+.signinOptions p {
+    margin: 0px 10px 0px 160px;
+}
+
+/* Tabs */
+.modalContent .head {
+    width: 100%;
+    display: flex;
+}
+
+.modalContent .head>div {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+}
+
+.head div:nth-child(1),
+.head div:nth-child(2) {
+    background: lightgrey;
+    transition: all .3s ease-in-out;
+}
+
+.head div:nth-child(1) {
+    background: transparent;
+}
+
+.modalContent .body {
+    overflow: hidden;
+}
+
+/* tab switch */
+
+
+.hidden {
+    display: none;
+}
+
+
+/* error message + success message style */
+
+.error {
+    font-size: 13px; 
+    color:red;  
+}
+
+.signuperror{
+    font-size: 13px;
+    color: lightcoral;
+    margin: 10px;
+}
+
+.phperror {
+    font-size: 13px;
+    color: lightcoral;
+    margin: 10px;
+}
+
+.success {
+    font-size: 13px;
+    color: lightseagreen;
+    margin: 5px;
+}
+
+.correct {
+    border: 1px solid green;
+    box-shadow: 0 0 1px 1px green;
+}
+
+.incorrect {
+    border: 1px solid red;
+    box-shadow: 0 0 1px 1px red;
+}
+
+/* Kakao Login Container */
+
+#kakaoLoginButtonContainer {
+    padding: 10px 0;
+}
+
